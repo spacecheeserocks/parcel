@@ -170,6 +170,7 @@ export class DevPackager {
       mainEntry = null;
     }
 
+    let globalName = this.bundle.env.globalName;
     let contents =
       prefix +
       '({' +
@@ -184,6 +185,8 @@ export class DevPackager {
       ) +
       ', ' +
       JSON.stringify(this.parcelRequireName) +
+      ', ' +
+      JSON.stringify(globalName ? globalName : undefined) +
       ')' +
       '\n';
 

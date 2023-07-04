@@ -223,6 +223,8 @@ export interface Environment {
   +shouldScopeHoist: boolean;
   +sourceMap: ?TargetSourceMapOptions;
   +loc: ?SourceLocation;
+  /** When building for Browser, the name of the global variable to use in UMD when in a non-module environment */
+  +globalName: ?string;
 
   /** Whether <code>context</code> specifies a browser context. */
   isBrowser(): boolean;

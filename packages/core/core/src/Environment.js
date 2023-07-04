@@ -31,6 +31,7 @@ export function createEnvironment({
   shouldScopeHoist = false,
   sourceMap,
   loc,
+  globalName = undefined,
 }: EnvironmentOpts = {
   /*::...null*/
 }): Environment {
@@ -106,6 +107,7 @@ export function createEnvironment({
     shouldScopeHoist,
     sourceMap,
     loc,
+    globalName,
   };
 
   res.id = getEnvironmentHash(res);

@@ -307,6 +307,7 @@ export class TargetResolver {
                   this.options,
                   descriptor.sourceMap,
                 ),
+                globalName: descriptor.globalName,
               }),
             };
 
@@ -871,6 +872,7 @@ export class TargetResolver {
               descriptor.optimize === true,
             shouldScopeHoist: true,
             sourceMap: normalizeSourceMap(this.options, descriptor.sourceMap),
+            globalName: descriptor.globalName,
           }),
           loc: toInternalSourceLocation(this.options.projectRoot, loc),
         });
@@ -1069,6 +1071,7 @@ export class TargetResolver {
             shouldScopeHoist:
               shouldScopeHoist && descriptor.scopeHoist !== false,
             sourceMap: normalizeSourceMap(this.options, descriptor.sourceMap),
+            globalName: descriptor.globalName,
           }),
           loc: toInternalSourceLocation(this.options.projectRoot, loc),
         });
@@ -1107,6 +1110,7 @@ export class TargetResolver {
             descriptor.scopeHoist != null
               ? {path: `/targets/${targetName}/scopeHoist`}
               : {message: '(default)'},
+          globalName: descriptor.globalName,
         });
       }
     }

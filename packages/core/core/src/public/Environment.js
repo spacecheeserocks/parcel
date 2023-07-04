@@ -188,6 +188,10 @@ export default class Environment implements IEnvironment {
     return this.#environment.isLibrary;
   }
 
+  get globalName(): string {
+    return this.#environment.globalName;
+  }
+
   get shouldOptimize(): boolean {
     return this.#environment.shouldOptimize;
   }
